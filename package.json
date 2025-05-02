@@ -1,0 +1,54 @@
+{
+  "name": "arm",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "yarn@4.9.1",
+  "type": "module",
+  "scripts": {
+    "dev": "webpack serve --mode development --config webpack/config.ts",
+    "build": "webpack --mode production --config webpack/config.ts",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@elephas/core": "^1.10.1",
+    "@elephas/layout": "^1.10.1",
+    "@elephas/react-core": "^1.8.0",
+    "@elephas/react-layout": "^1.8.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "effector": "^23.3.0",
+    "effector-react": "^23.3.0",
+    "mime": "2",
+    "react": "18",
+    "react-dom": "18"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.25.1",
+    "@types/node": "^22.15.3",
+    "@types/react": "18",
+    "@types/react-dom": "18",
+    "css-loader": "^7.1.2",
+    "eslint": "^9.25.1",
+    "html-webpack-plugin": "^5.6.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.1",
+    "mini-css-extract-plugin": "^2.9.2",
+    "prettier": "^3.5.3",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "typescript": "4",
+    "typescript-eslint": "^8.31.1",
+    "webpack": "^5.99.7",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write"
+    ],
+    "*.ts": [
+      "prettier --write",
+      "eslint --no-error-on-unmatched-pattern --fix"
+    ]
+  }
+}

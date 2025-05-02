@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2021", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "target": "ES2021",
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+
+    "importHelpers": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "esModuleInterop": true,
+    "useDefineForClassFields": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "removeComments": true,
+
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "ts-node": { "compilerOptions": { "module": "commonjs" } },
+  "include": ["**/*.ts", "**/*.tsx"]
+}
