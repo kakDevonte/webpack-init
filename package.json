@@ -1,13 +1,13 @@
 {
-  "name": "arm",
+  "name": "webpack-init",
   "private": true,
   "version": "0.0.0",
   "packageManager": "yarn@4.9.1",
-  "type": "module",
   "scripts": {
-    "dev": "webpack serve --mode development --config webpack/config.ts",
+    "dev": "cross-env NODE_ENV=development webpack serve --mode development --config webpack/config.ts",
     "build": "webpack --mode production --config webpack/config.ts",
-    "prepare": "husky"
+    "prepare": "husky install",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@elephas/core": "^1.10.1",
@@ -20,13 +20,15 @@
     "effector-react": "^23.3.0",
     "mime": "2",
     "react": "18",
-    "react-dom": "18"
+    "react-dom": "18",
+    "react-router": "^7.5.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.1",
     "@types/node": "^22.15.3",
     "@types/react": "18",
     "@types/react-dom": "18",
+    "cross-env": "^7.0.3",
     "css-loader": "^7.1.2",
     "eslint": "^9.25.1",
     "html-webpack-plugin": "^5.6.3",

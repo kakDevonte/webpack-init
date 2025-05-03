@@ -20,7 +20,7 @@ const config: Configuration = {
   name: 'client',
   target: 'web',
   plugins,
-  entry: path.resolve(SRC_DIR, 'index.tsx'),
+  entry: path.resolve(SRC_DIR, 'app/index.tsx'),
   output: {
     path: DIST_DIR,
     filename: filename('js'),
@@ -37,10 +37,12 @@ const config: Configuration = {
     rules: [tsLoader, cssLoader]
   },
   ...(IS_DEV && {
-    historyApiFallback: true,
-    port: DEV_SERVER_PORT,
-    open: true,
-    hot: true
+    devServer: {
+      historyApiFallback: true,
+      port: DEV_SERVER_PORT,
+      open: true,
+      hot: true
+    }
   }),
   optimization: {
     splitChunks: {
