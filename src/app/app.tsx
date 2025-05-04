@@ -1,17 +1,6 @@
-import { BrowserRouter, Route, Routes } from 'react-router';
-
-import { NavigateRoot } from '@/shared/router/navigate-root';
-import { MainPage } from '@/pages/main/page';
-import { AuthPage } from '@/pages/auth/page';
+import { RouterProvider } from 'react-router';
+import { router } from './router';
 
 export const App = () => {
-  return (
-    <BrowserRouter>
-      <NavigateRoot />
-      <Routes>
-        <Route path='/' element={<MainPage />} />
-        <Route path='/auth' element={<AuthPage />} />
-      </Routes>
-    </BrowserRouter>
-  );
+  return <RouterProvider router={router} />;
 };

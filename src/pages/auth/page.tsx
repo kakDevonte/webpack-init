@@ -1,8 +1,17 @@
-import { LogoIcon } from '@/shared/components/icons';
 import { Button, Input } from '@elephas/react-core';
+import { useSearchParams } from 'react-router';
+import { useGate } from 'effector-react';
 import styled from '@emotion/styled';
 
+import { LogoIcon } from '@/shared/components/icons';
+
+import { PageGate } from './model';
+
 export const AuthPage = () => {
+  const [searchParams] = useSearchParams();
+
+  useGate(PageGate, { param: searchParams.get('sid') });
+
   return (
     <Root>
       <Container>
@@ -64,7 +73,9 @@ const Title = styled.h2({
 const Text = styled.h2({
   color: '#27293B',
   fontSize: 21,
+  fontWeight: 400,
+  fontFamily: 'Inter',
   fontVariantNumeric: 'lining-nums proportional-nums',
   lineHeight: '30px',
-  letterSpacing: '0.082px'
+  letterSpacing: '1.5px'
 });

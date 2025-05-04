@@ -1,10 +1,11 @@
 import { useGate } from 'effector-react';
-import { useNavigate } from 'react-router';
+import { Outlet, useNavigate } from 'react-router';
 import { NavigateGate } from './model';
 
-export const NavigateRoot = () => {
+export const RouterBridge = () => {
   const navigate = useNavigate();
+
   useGate(NavigateGate, navigate);
 
-  return null;
+  return <Outlet />;
 };
