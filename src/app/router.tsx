@@ -9,7 +9,7 @@ export const router = createBrowserRouter([
     element: <RouterBridge />,
     children: [
       {
-        path: '/',
+        path: '',
         element: <MainPage />
       },
       {
